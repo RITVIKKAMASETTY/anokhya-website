@@ -10,7 +10,7 @@
     color: white;
     font-weight: 600;
     font-size: 40px;
-    border-bottom: solid 2px yellow;
+    border-bottom: solid 2px orange;
     text-transform: uppercase;
 
 }
@@ -20,7 +20,7 @@
     font-family: "Barlow Condensed", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: yellow;
+    color:orange;
     margin-bottom: 8vh;
 }
 

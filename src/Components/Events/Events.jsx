@@ -82,7 +82,7 @@ const Events = () => {
       <div className="events_con">
         <div className="events_head">
           <h2 style={{fontSize:"40px"}}>EVENTS</h2>
-          <p style={{color:"yellow", fontSize:"20px"}}>Click on event card to know more !!</p>
+          <p style={{color:"orange", fontSize:"20px"}}>Click on event card to know more !!</p>
           <p1>slide to view</p1>
         </div>
         <div className="event_con">

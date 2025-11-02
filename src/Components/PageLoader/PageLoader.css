@@ -12,7 +12,7 @@
 .pgl_con{
     height: 50%;
     
-    color: yellow;
+    color:orange;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +39,7 @@
     font-weight: 600;
     bottom: 10px;
     right: 20px;
-    color: yellow;
+    color:orange;
 }
 
 @media(max-width:534px){

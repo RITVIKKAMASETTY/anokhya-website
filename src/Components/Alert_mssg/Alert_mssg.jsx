@@ -22,7 +22,7 @@ const Announcement = ({ message, duration }) => {
       {isVisible && (
         <div
           style={{
-            backgroundColor: "yellow",
+            backgroundColor: "orange",
             color: "black",
             margintop:"10px",
             padding: "10px",

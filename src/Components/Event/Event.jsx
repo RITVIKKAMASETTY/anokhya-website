@@ -145,7 +145,7 @@ function Coderelay() {
                     ></i>{" "}
                     {event_.event_coordinator1}
                   </p>
-                  <p style={{ whiteSpace: "pre-wrap", color: "greenyellow" }}>
+                  <p style={{ whiteSpace: "pre-wrap", color: "greenorange" }}>
                     <i
                       className="fa-brands fa-whatsapp"
                       style={{ color: "#ffffff" }}

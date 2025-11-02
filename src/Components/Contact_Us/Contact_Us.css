@@ -15,7 +15,7 @@
     color:white;
     font-weight: 600;
     font-size: 30px;
-    border-bottom: solid 2px yellow;
+    border-bottom: solid 2px orange;
 }
 .conts_name,.conts_contact,.conts_query{
     display: flex;
@@ -30,7 +30,7 @@
     border: solid 2px rgba(255, 255, 255, 0);
     outline: none;
     border-radius: 4px;
-    color: yellow;
+    color: orange;
     padding: 5px 15px;
     font-size: 17px;
     letter-spacing: 2px;
@@ -48,7 +48,7 @@
     font-size: 17px;
     padding: 5px 15px;
     outline: none;
-    color: yellow;
+    color:orange;
 }
 .conts_submit{
     display:flex;
@@ -58,17 +58,17 @@
     width: 140px;
     height: 40px;
     cursor: pointer;
-    color: yellow;
+    color:orange;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 3px;
     background-color: black;
     border: solid 2px white;
-    box-shadow: 2px 2px 2px yellow;
+    box-shadow: 2px 2px 2px orange;
 }
 .conts_submit input:hover{
     color: white;
-    border: solid 2px yellow;
+    border: solid 2px orange;
     box-shadow: 2px 2px 2px white;
 }
 

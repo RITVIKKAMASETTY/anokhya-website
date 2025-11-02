@@ -23,12 +23,12 @@
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  color: yellow;
+  color:orange;
   position: relative;
 }
 
 .home_m_top_left {
-  color: rgb(251, 230, 0);
+  color:orange;
   position: absolute;
   top: 2%;
   right: 2%;
@@ -103,7 +103,7 @@
   text-decoration: none;
   font-weight: 600;
   color: black;
-  background-color: rgb(255, 255, 0);
+  background-color:orange;
   border: solid 2px black;
   border-radius: 4px;
   padding: 0.5rem 1rem;
@@ -122,7 +122,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  border: solid 2px rgb(255, 255, 0);
+  border: solid 2px orange;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-align: center;
@@ -190,7 +190,7 @@
 .close-button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #d4d400;
+  background-color: orange;
   color: black;
   font-weight: bold;
   border: 2px solid black;
@@ -200,7 +200,7 @@
 }
 
 .close-button:hover {
-  background-color: #c0c000;
+  background-color: orange;
 }
 
 

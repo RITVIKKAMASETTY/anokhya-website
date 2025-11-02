@@ -31,7 +31,7 @@ export default function App() {
             <div className="spons_links">
                
                         <a href="https://www.instagram.com/cocoacounty?igsh=MWlhMDI0OW00MGJp&utm_source=qr" target='_blank'>
-                            <i className="fab fa-instagram" style={{color:'yellow'}}></i>
+                            <i className="fab fa-instagram" style={{color:'orange'}}></i>
                         </a>
                   
             </div>
