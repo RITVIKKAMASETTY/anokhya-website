@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./Event.css";
 import event_data from "../../Assets/Data/Events_data.json";
+import RegistrationForm from "../Reg/Registration.jsx";
 import VanillaTilt from "vanilla-tilt";
 
 function Tilt(props) {
@@ -8,10 +9,27 @@ function Tilt(props) {
   const tiltRef = useRef(null);
 
   useEffect(() => {
-    VanillaTilt.init(tiltRef.current, options);
+    // Protect against cases where the ref isn't set or the library fails to initialize.
+    if (!tiltRef.current) return;
+
+    try {
+      VanillaTilt.init(tiltRef.current, options);
+    } catch (err) {
+      // initialization failed — don't crash the app
+      // eslint-disable-next-line no-console
+      console.warn("VanillaTilt init failed:", err);
+    }
 
     return () => {
-      tiltRef.current.vanillaTilt.destroy();
+      try {
+        if (tiltRef.current && tiltRef.current.vanillaTilt && typeof tiltRef.current.vanillaTilt.destroy === "function") {
+          tiltRef.current.vanillaTilt.destroy();
+        }
+      } catch (err) {
+        // cleanup failed — log and continue
+        // eslint-disable-next-line no-console
+        console.warn("VanillaTilt destroy failed:", err);
+      }
     };
   }, [options]);
 
@@ -23,20 +41,29 @@ function Tilt(props) {
 }
 
 function Coderelay() {
-  const eventIndex = window.location.pathname.slice(8) - 1; // Extract event index from URL
+  // Robustly extract the event index from the URL path (expecting /events/:id)
+  const pathMatch = window.location.pathname.match(/\/events\/(\d+)/);
+  const eventIndex = pathMatch ? parseInt(pathMatch[1], 10) - 1 : 0;
   const event_ = event_data[eventIndex];
-  const btn_id = event_.button_id;
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widget.konfhub.com/widget.js";
-    script.setAttribute("button_id", btn_id);
-    document.getElementById("konfhub-widget-container").appendChild(script);
+  // If event data isn't found, render a friendly fallback instead of crashing
+  if (!event_) {
+    return (
+      <div className="IndEventmain">
+        <div className="link">
+          <a href={`/`}>
+            <i className="fa-solid fa-home" style={{ color: "#ffffff", fontSize: "30px" }}></i>
+          </a>
+        </div>
+        <div style={{ padding: 40, color: '#fff' }}>
+          <h2>Event not found</h2>
+          <p>The event you requested doesn't exist or the URL is invalid.</p>
+        </div>
+      </div>
+    );
+  }
 
-    return () => {
-      document.getElementById("konfhub-widget-container").removeChild(script);
-    };
-  }, [btn_id]);
+  // Removed KonfHub widget injection — we use the built-in register modal instead.
 
   const options = {
     speed: 2000,
@@ -82,7 +109,9 @@ function Coderelay() {
               {event_.event_name}
             </h2>
             <p>{event_.event_description}</p>
-            <div id="konfhub-widget-container"></div>
+            <RegistrationForm eventId={eventIndex + 1} />
+
+            {/* KonfHub removed — using local registration modal */}
           </div>
         </div>
         <div className="other_event_details">

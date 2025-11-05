@@ -226,13 +226,7 @@
         font-size: 15px;
         text-align: justify;
     }
-    #konfhub-widget-container{
-        width: 100%;
-    }
-    #konfhub-widget-container button{
-        width: 100%;
-        justify-content: center;
-    }
+    /* KonfHub widget removed; no special styles needed here */
     .event_time_details,
 .event_coordinators_details,
 .event_prize_details{
