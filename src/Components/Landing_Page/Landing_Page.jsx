@@ -7,15 +7,21 @@ import previous from "../../Assets/LPMV/Anokhya2.png";
 import banner2 from "../../Assets/LPMV/banner.png";
 import banner1 from "../../Assets/Events/final.mp4";
 import { AuroraBackground } from "../ui/background";
+import acm from "../../Assets/logos/acm.png";
+import anvaya from "../../Assets/logos/anvaya.png";
+import czl1 from "../../Assets/logos/czl1.png";
+import iiclogo from "../../Assets/logos/iiclogo.png";
+import iqac from "../../Assets/logos/iqac.png";
 import Alert_mssg from '../../Components/Alert_mssg/Alert_mssg';
 
 export default function Homee() {
   // Placeholder images for navbar carousel - replace with your actual image URLs
 const navImages = [
-    "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop",
-    "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=300&fit=crop",
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop",
-    "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=300&fit=crop",
+    iiclogo, 
+    iqac, 
+    acm, 
+    anvaya, 
+    czl1
   ];
 
 
@@ -39,30 +45,33 @@ const navImages = [
       {/* Header with Navbar - Outside AuroraBackground */}
       <header className="relative w-full bg-black/80 backdrop-blur-md shadow-lg border-b border-orange-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4 relative">
-            {/* Logo Carousel Section */}
-            <div className="flex justify-start items-center gap-6 lg:absolute lg:left-0">
-              <AnimatePresence mode="wait">
+          <div className="flex justify-between items-center py-4 space-x-40">
+            <div className="flex justify-center items-center gap-6">
+                <div className="home_m_logo">
+                  <img src={logo} alt="Logo" />
+                  <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
-                  className="w-12 h-12 mt-20 rounded-full overflow-hidden border-2 border-orange-500 shadow-lg"
+                  className="w-20 h-20 overflow-hidden border-2 shadow-lg border border-solid border-gray-500 border-opacity-0 br-transparant"
                 >
-                  <img
+                   <img 
                     src={navImages[currentIndex]}
-                    alt={`Logo ${currentIndex + 1}`}
+                    alt={`Nav Image ${currentIndex + 1}`}
                     className="w-full h-full object-cover"
                   />
+
                 </motion.div>
               </AnimatePresence>
+                </div>
             </div>
 
             {/* Navigation Buttons */}
-            {/* <div className="flex space-x-4">
-              <button
+            <div className="flex space-x-4">
+              {/* <button
                 onClick={() => setCurrentView('register')}
                 className="px-6 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-black rounded-full hover:from-orange-600 hover:to-yellow-600 transition-colors font-medium shadow-lg hover:shadow-orange-500/25"
               >
@@ -73,8 +82,13 @@ const navImages = [
                 className="px-6 py-2 border border-orange-500 text-orange-400 rounded-full hover:bg-orange-500/10 transition-colors font-medium"
               >
                 About
-              </button>
-            </div> */}
+              </button> */}
+            <div className="home_m_top_left">
+              <h3>TECH FEST 2025</h3>
+              <p>EVENTS WORKSHOPS TECH-TALKS</p>
+              <p style={{ color: "orange" }}>21st - 22nd NOV 2025</p>
+            </div>
+            </div>
           </div>
         </div>
       </header>
@@ -131,14 +145,9 @@ const navImages = [
             </AnimatePresence>
            
             {/* Rest of your component content */}
-            <div className="home_m_top_left">
-              <h3>TECH FEST 2025</h3>
-              <p>EVENTS WORKSHOPS TECH-TALKS</p>
-              <p style={{ color: "orange" }}>21st - 22nd NOV 2025</p>
-            </div>
-            <div className="home_m_logo">
+            {/* <div className="home_m_logo">
               <img src={logo} alt="Logo" />
-            </div>
+            </div> */}
             <div className="home_m_banner">
               <img src={banner} alt="Banner" />
             </div>
@@ -177,7 +186,7 @@ const navImages = [
                 </a>
               </div>
               <div>
-                <a href="mailto:aiml-dsce@dayanandasagar.edu">
+                <a href="mailto:techfest@anokhya.com">
                   <i
                     className="fa-solid fa-envelope"
                     style={{ color: "#ffffff" }}
