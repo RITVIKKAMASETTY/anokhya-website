@@ -39,9 +39,9 @@ const navImages = [
       {/* Header with Navbar - Outside AuroraBackground */}
       <header className="relative w-full bg-black/80 backdrop-blur-md shadow-lg border-b border-orange-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-4 relative">
             {/* Logo Carousel Section */}
-            <div className="flex justify-center items-center gap-6">
+            <div className="flex justify-start items-center gap-6 lg:absolute lg:left-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -49,7 +49,7 @@ const navImages = [
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
-                  className="w-12 h-12 rounded-full overflow-hidden border-2 border-orange-500 shadow-lg"
+                  className="w-12 h-12 mt-20 rounded-full overflow-hidden border-2 border-orange-500 shadow-lg"
                 >
                   <img
                     src={navImages[currentIndex]}
